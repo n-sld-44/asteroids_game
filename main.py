@@ -41,7 +41,7 @@ def main():
                 return
             for bullet in bullets:
                 if sprite.collides_with(bullet):
-                    sprite.kill()
+                    sprite.split()
                     bullet.kill()
                     break
         

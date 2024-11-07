@@ -14,8 +14,10 @@ def main():
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()
+    bullets = pygame.sprite.Group()
 
-    Bullet.containers = updatable,drawable
+
+    Bullet.containers = updatable,drawable,bullets
     Player.containers = updatable,drawable
     Asteroid.containers = updatable,drawable, asteroids
     AsteroidField.containers = updatable
@@ -37,6 +39,11 @@ def main():
             if player.collides_with(sprite):
                 print("Game Over")
                 return
+            for bullet in bullets:
+                if sprite.collides_with(bullet):
+                    sprite.kill()
+                    bullet.kill()
+                    break
         
         for sprite in drawable:
             sprite.draw(screen)

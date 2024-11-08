@@ -1,7 +1,7 @@
 # asteroids_game
 
 
-``python
+```python3
 source venv/lib/activate
 pip install requirements.txt
-``
+```
